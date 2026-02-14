@@ -1,0 +1,215 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="invoice" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef09528c-36b1-4bef-8edf-dc0b12bd95ab">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BlueWave-HotelManagement"/>
+	<parameter name="PAYMENT_ID" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[SELECT 
+    b.booking_id,
+    b.customer_id,
+    c.name,  
+    b.checkin_date,
+    b.checkout_date,
+    b.special_note,
+    b.status,
+    b.created_at,
+    bd.room_id,
+    rd.room_type,
+    rd.price_per_room,
+    p.payment_id,
+    p.amount,
+    p.payment_method,
+    p.payment_date
+FROM Booking b
+LEFT JOIN Booking_Details bd ON b.booking_id = bd.booking_id
+LEFT JOIN Customer c ON b.customer_id = c.customer_id  
+LEFT JOIN Room_Details rd ON bd.room_id = rd.room_id
+LEFT JOIN payment_booking pb ON b.booking_id = pb.booking_id
+LEFT JOIN payment p ON pb.payment_id = p.payment_id
+WHERE p.payment_id = $P{PAYMENT_ID}
+
+]]></query>
+	<field name="booking_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="booking_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="booking_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="customer_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="checkin_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="checkin_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="checkin_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="checkout_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="checkout_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="checkout_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="special_note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="special_note"/>
+		<property name="com.jaspersoft.studio.field.label" value="special_note"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="created_at" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking"/>
+	</field>
+	<field name="room_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="room_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="room_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Booking_Details"/>
+	</field>
+	<field name="room_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="room_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="room_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Room_Details"/>
+	</field>
+	<field name="price_per_room" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="price_per_room"/>
+		<property name="com.jaspersoft.studio.field.label" value="price_per_room"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Room_Details"/>
+	</field>
+	<field name="payment_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="payment_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="payment_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="payment_method" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="payment_method"/>
+		<property name="com.jaspersoft.studio.field.label" value="payment_method"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="payment_date" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="payment_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="payment_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<variable name="TOTAL_AMOUNT" calculation="Sum" class="java.math.BigDecimal">
+		<expression><![CDATA[($F{checkout_date}.getTime() - $F{checkin_date}.getTime()) / (1000*60*60*24) * 
+$F{price_per_room}.doubleValue()]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="129" splitType="Stretch">
+		<element kind="image" uuid="f2a8a4ff-bcb9-4b2e-82bc-a0bcf25bead1" x="0" y="0" width="50" height="50">
+			<expression><![CDATA["C:/Users/Imakshi/Music/HotelManagementSystem_ijse/src/main/resources/images/logo.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="d118a77e-9785-4f82-8a41-2da1f9a8d420" x="60" y="0" width="140" height="30" forecolor="#0D106B" fontSize="16.0" hTextAlign="Center">
+			<text><![CDATA[Blue Wave Hotel]]></text>
+		</element>
+		<element kind="staticText" uuid="c6ecf9a2-aaf6-4c0d-9840-15f52bc32ed9" x="55" y="30" width="151" height="30" fontSize="16.0" hTextAlign="Center">
+			<text><![CDATA[සාදරයෙන් පිළිගනිමු !!]]></text>
+		</element>
+		<element kind="staticText" uuid="a840a6d1-54eb-4c59-8305-9daaaf74247f" x="340" y="47" width="90" height="20" fontSize="14.0">
+			<text><![CDATA[Payment Id :]]></text>
+		</element>
+		<element kind="staticText" uuid="0de1820e-b823-418e-a7f0-16ced5db31f0" x="340" y="68" width="110" height="20" fontSize="14.0">
+			<text><![CDATA[Customer name:]]></text>
+		</element>
+		<element kind="staticText" uuid="2170c05c-229a-4507-b65e-3bb6c5f3e41b" x="340" y="88" width="90" height="20" fontSize="14.0">
+			<text><![CDATA[Date :]]></text>
+		</element>
+		<element kind="textField" uuid="61155002-3887-44e3-a4cc-dbc6d12a5538" x="454" y="47" width="100" height="20" fontSize="12.0">
+			<expression><![CDATA[$F{payment_id}]]></expression>
+		</element>
+		<element kind="textField" uuid="c036a842-1cdc-4dc9-be25-c732e753777a" x="454" y="68" width="100" height="20" fontSize="12.0">
+			<expression><![CDATA[$F{name}]]></expression>
+		</element>
+		<element kind="textField" uuid="26431526-2c01-4760-b265-f893c06102d0" x="454" y="90" width="112" height="18" fontSize="12.0">
+			<expression><![CDATA[$F{checkout_date}]]></expression>
+		</element>
+		<element kind="staticText" uuid="d89092a9-8fd3-4201-a0ed-485e4146b4c3" x="210" y="9" width="140" height="30" forecolor="#0D106B" fontSize="19.0" hTextAlign="Center">
+			<text><![CDATA[INVOICE]]></text>
+		</element>
+		<element kind="line" uuid="abdb8eb0-eb70-4788-bec3-289fd1ea853a" x="-10" y="113" width="570" height="1">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<pen lineWidth="3.0" lineStyle="Solid"/>
+		</element>
+	</title>
+	<columnHeader height="38" splitType="Stretch">
+		<element kind="staticText" uuid="7c098ef0-fbff-449d-9bee-0b422ce90503" x="11" y="0" width="79" height="19" fontSize="14.0">
+			<text><![CDATA[Booking Id]]></text>
+		</element>
+		<element kind="staticText" uuid="c52228f7-13a2-4ae6-9bd9-6b93bc700279" x="91" y="0" width="98" height="19" fontSize="14.0">
+			<text><![CDATA[Room Type]]></text>
+		</element>
+		<element kind="staticText" uuid="1a93d3a8-025f-4d6a-ade0-9c30d857e8dc" x="190" y="0" width="100" height="19" fontSize="14.0" hTextAlign="Left">
+			<text><![CDATA[Price per Night]]></text>
+		</element>
+		<element kind="staticText" uuid="00c5e36e-1601-4c53-8f2e-e5e9fb2da926" x="303" y="0" width="143" height="19" fontSize="14.0" hTextAlign="Left">
+			<text><![CDATA[Check-in Date]]></text>
+		</element>
+		<element kind="staticText" uuid="8fdfedab-7b64-446b-81e9-e11a9bae69a5" x="446" y="0" width="89" height="19" fontSize="14.0">
+			<text><![CDATA[Total Amount]]></text>
+		</element>
+		<element kind="line" uuid="2cea6705-ab8a-4fcb-8cfb-b0a5c5724fa5" x="-8" y="24" width="570" height="1">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<element kind="textField" uuid="66e7c148-05b4-4537-8223-3133ab931d5b" x="11" y="1" width="79" height="16" fontSize="12.0">
+				<expression><![CDATA[$F{booking_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="2c3796db-2f5f-4f46-8224-656cb52e7224" x="91" y="1" width="99" height="16" fontSize="12.0">
+				<expression><![CDATA[$F{room_type}]]></expression>
+			</element>
+			<element kind="textField" uuid="186beb50-3ebf-45d0-b5de-3af035239c09" x="191" y="1" width="100" height="16" fontSize="12.0">
+				<expression><![CDATA[$F{price_per_room}]]></expression>
+			</element>
+			<element kind="textField" uuid="e526c70c-4c45-49d7-8a0e-0374e431625e" x="300" y="1" width="146" height="16" fontSize="12.0">
+				<expression><![CDATA[$F{checkin_date}]]></expression>
+			</element>
+			<element kind="textField" uuid="b12f4802-9ffc-4ec0-91d1-5b535de1eed2" x="445" y="1" width="89" height="16" fontSize="12.0" hTextAlign="Right">
+				<expression><![CDATA[($F{checkout_date}.getTime() - $F{checkin_date}.getTime()) / (1000*60*60*24) * 
+$F{price_per_room}.doubleValue()]]></expression>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="50" splitType="Stretch">
+		<element kind="staticText" uuid="8116e85a-a39d-473b-be98-d611a6af7d02" x="237" y="0" width="100" height="20" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[Thank You !!]]></text>
+		</element>
+		<element kind="staticText" uuid="8cdb65ae-9710-430a-b61d-edbc16cfa00e" x="184" y="24" width="208" height="20" fontSize="15.0" hTextAlign="Center">
+			<text><![CDATA[නැවත හමුවෙමු !!]]></text>
+		</element>
+	</pageFooter>
+	<summary height="74" splitType="Stretch">
+		<element kind="staticText" uuid="cd7a12b3-dc14-4bdf-bc93-4cf656d58268" x="338" y="5" width="62" height="28" fontSize="19.0">
+			<text><![CDATA[Total :]]></text>
+		</element>
+		<element kind="staticText" uuid="3046ba3b-cefb-4fd3-959f-9eb8b6c33e56" x="408" y="5" width="46" height="28" fontSize="16.0">
+			<text><![CDATA[LKR]]></text>
+		</element>
+		<element kind="textField" uuid="1acfe36c-5b29-4537-b8b5-3bb763757872" x="454" y="4" width="81" height="29" fontSize="16.0" hTextAlign="Right">
+			<expression><![CDATA[$V{TOTAL_AMOUNT}]]></expression>
+		</element>
+		<element kind="line" uuid="2128bc5f-ed43-4853-b5ab-faabc79743f7" x="408" y="37" width="160" height="1"/>
+		<element kind="line" uuid="1ab44dcf-78a7-4d98-9f17-3f45e4bdfd87" x="409" y="2" width="160" height="1"/>
+		<element kind="textField" uuid="dbb530f6-e21f-404a-aac1-6b9102c6b8ca" x="411" y="44" width="100" height="26" fontSize="12.0" hTextAlign="Center">
+			<expression><![CDATA[$F{payment_method}]]></expression>
+		</element>
+		<element kind="staticText" uuid="15ecbb20-59d2-4d65-b924-4e9bd9dea29e" x="340" y="42" width="60" height="31" fontSize="14.0">
+			<text><![CDATA[Method :]]></text>
+		</element>
+	</summary>
+</jasperReport>

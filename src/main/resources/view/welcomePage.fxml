@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to bottom, #1e3c72, #2a5298);" styleClass="root" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hotelmanagementsystem_ijse.controller.WelcomeController">
+   <children>
+      <StackPane alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="754.0" prefWidth="974.0" style="                         -fx-background-color: rgba(255,255,255,0.12);                         -fx-background-radius: 25;                         -fx-border-radius: 25;                    " styleClass="stack-pane" stylesheets="@../styles/style.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+         <effect>
+            <DropShadow color="#00000088" offsetX="0" offsetY="8" radius="25" />
+         </effect>
+         <children>
+            <ImageView fitHeight="121.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets top="47.0" />
+               </StackPane.margin>
+            </ImageView>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="19.0" prefWidth="241.0" styleClass="label-subtitle" stylesheets="@../styles/style.css" text="Smart • Fast • Secure" textAlignment="CENTER" textFill="#D0D0D0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="150.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="440.0" progress="0.0" stylesheets="@../styles/style.css">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="progress-bar" />
+                        <String fx:value="bar" />
+                        <String fx:value="track" />
+                     </styleClass>
+                  </ProgressBar>
+                  <Label text="Initializing modules..." textFill="#B0BEC5">
+                     <font>
+                        <Font size="12" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="54.0" prefWidth="368.0" styleClass="label-title" stylesheets="@../styles/style.css" text="BLUE WAVE HOTEL" textAlignment="CENTER" textFill="#86a0bf">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="200.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

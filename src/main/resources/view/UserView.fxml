@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainUserView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hotelmanagementsystem_ijse.controller.UserViewController">
+   <children>
+      <AnchorPane layoutX="182.0" layoutY="82.0" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #00a1de;" styleClass="main-content-area" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="-27.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" styleClass="sidebar-container" stylesheets="@../styles/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="61.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #cdd2f7; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clickDashBoardNav" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="    Home" textFill="#1b1a1a">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-home-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                        <String fx:value="nav-button" />
+                        <String fx:value="thumb" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickCustomerNav" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="  Customer" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-tall-person-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickEmployeeNav" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text=" Employee" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-person-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickRoomDetailsNav" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="Room details" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-hotel-bed-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickBookingNav" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="   Booking" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-hotel-room-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickReservationNav" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="Reservation" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-hotel-room-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickPaymentNav" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" stylesheets="@../styles/style.css" text="  Payment" textFill="#1b1a1a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-card-payment-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-active" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickLogOutNav" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bbc1d3; -fx-background-radius: 15; -fx-border-color: #778ca3; -fx-border-radius: 15; -fx-border-width: 0 0 3px 0;" styleClass="logout-button" stylesheets="@../styles/style.css" text="  Logout" textFill="#1b1a1a">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="150.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-logout-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainContent" layoutX="229.0" layoutY="74.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f2f1ed;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+      <AnchorPane prefHeight="100.0" prefWidth="290.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/trees.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="74.0" prefWidth="73.0" text="BLUE" textFill="#0e4fd9">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="74.0" prefWidth="89.0" text="WAVE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="100.0" prefWidth="200.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" fillWidth="false" layoutX="60.0" layoutY="-30.0" prefHeight="100.0" prefWidth="136.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="lblDate" prefHeight="35.0" prefWidth="130.0" styleClass="label-date-time" stylesheets="@../styles/style.css" text="2025-12-12" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="136.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lblTime" styleClass="label-date-time" stylesheets="@../styles/style.css" text="03.10" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

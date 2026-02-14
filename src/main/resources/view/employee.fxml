@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hotelmanagementsystem_ijse.controller.EmployeeController">
+    <children>
+        <ImageView fitHeight="287.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../images/109253-blue-wave-png-free-photo.png" />
+            </image>
+        </ImageView>
+        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="71.0" prefWidth="482.0" text="Employee Management" textAlignment="CENTER" textFill="#07205b">
+                            <font>
+                                <Font name="Arial Bold" size="36.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1000.0" spacing="10.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee id :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="employeeIdField" onKeyPressed="#handleSearchEmployee" prefHeight="30.0" prefWidth="280.0" style="-fx-background-radius: 10; -fx-border-color: #778ca3; -fx-border-radius: 10; -fx-border-width: 2;" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="100.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="EmailField" prefHeight="30.0" prefWidth="280.0" style="-fx-background-radius: 10; -fx-border-color: #778ca3; -fx-border-radius: 10; -fx-border-width: 2;">
+                            <HBox.margin>
+                                <Insets left="63.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1000.0" spacing="10.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="nameField" prefHeight="30.0" prefWidth="280.0" style="-fx-background-radius: 10; -fx-border-color: #778ca3; -fx-border-radius: 10; -fx-border-width: 2;">
+                            <HBox.margin>
+                                <Insets left="48.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="100.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="addressField" prefHeight="30.0" prefWidth="280.0" style="-fx-background-radius: 10; -fx-border-color: #778ca3; -fx-border-radius: 10; -fx-border-width: 2;">
+                     <HBox.margin>
+                        <Insets left="45.0" />
+                     </HBox.margin></TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1000.0" spacing="10.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                        </Text>
+                        <TextField fx:id="contactField" prefHeight="30.0" prefWidth="280.0" style="-fx-background-radius: 10; -fx-border-color: #778ca3; -fx-border-radius: 10; -fx-border-width: 2;">
+                            <HBox.margin>
+                                <Insets left="35.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Join Date :-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="100.0" />
+                            </HBox.margin>
+                        </Text>
+                  <Label fx:id="joinDateField" alignment="CENTER" disable="true" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #778ca3; -fx-border-width: 2;" text="09/12/2025">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1000.0" spacing="10.0">
+                    <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Job Role :-" textAlignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ComboBox fx:id="jobRoleBox" prefHeight="26.0" prefWidth="193.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #778ca3; -fx-border-width: 2;">
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="15.0" prefWidth="1000.0">
+                    <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleEmployeeSave" prefWidth="120.0" style="-fx-background-color: #45aaf2; -fx-background-radius: 20; -fx-border-color: #3867d6; -fx-border-radius: 20; -fx-border-width: 2;" text="Save">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleUpdateEmployee" prefWidth="120.0" style="-fx-background-color: #45aaf2; -fx-background-radius: 20; -fx-border-color: #3867d6; -fx-border-radius: 20; -fx-border-width: 2;" text="Update">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleDeleteEmployee" prefWidth="120.0" style="-fx-background-color: #45aaf2; -fx-background-radius: 20; -fx-border-color: #3867d6; -fx-border-radius: 20; -fx-border-width: 2;" text="Delete">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleResetEmployee" prefWidth="120.0" style="-fx-background-color: #45aaf2; -fx-background-radius: 20; -fx-border-color: #3867d6; -fx-border-radius: 20; -fx-border-width: 2;" text="Reset">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <TableView fx:id="employeeView" layoutX="51.2" layoutY="10.0" prefHeight="193.0" prefWidth="898.0" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="51.0">
+            <columns>
+                <TableColumn fx:id="colEmployeeId" prefWidth="89.60000532865524" text="Employee id" />
+                <TableColumn fx:id="colName" prefWidth="175.19998168945312" text="Name" />
+                <TableColumn fx:id="colEmail" prefWidth="165.6000213623047" text="Email" />
+                <TableColumn fx:id="colAddress" prefWidth="151.99996948242188" text="Address" />
+                <TableColumn fx:id="colContact" prefWidth="132.79998779296875" text="Contact" />
+                <TableColumn fx:id="colJobRole" prefWidth="153.60003662109375" text="Job Role" />
+            <TableColumn fx:id="colJoinDate" prefWidth="153.60003662109375" text="Join date" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>
